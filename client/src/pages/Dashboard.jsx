@@ -57,12 +57,20 @@ const Dashboard = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
-          <a 
-            href="/kanban" 
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-200"
-          >
-            Go to Kanban Board
-          </a>
+          <div className="flex gap-2">
+            <a 
+              href="/leaderboard" 
+              className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition duration-200"
+            >
+              View Full Leaderboard
+            </a>
+            <a 
+              href="/kanban" 
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-200"
+            >
+              Go to Kanban Board
+            </a>
+          </div>
         </div>
         
         {/* Stats Cards */}

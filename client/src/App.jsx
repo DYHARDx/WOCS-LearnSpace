@@ -3,6 +3,7 @@ import Kanban from "./Kanban";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import LeaderboardPage from "./pages/LeaderboardPage";
 import Navbar from "./components/Navbar";
 
 //  Route Guard using localStorage
@@ -24,6 +25,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
 
           {/* Kanban route - no longer protected */}
           <Route
