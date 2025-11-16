@@ -1,9 +1,17 @@
 const mongoose = require('mongoose');
 
 const connectToDB = async () => {
-  console.log('Skipping MongoDB connection - using in-memory storage for demonstration');
-  // For demo purposes, we're not connecting to MongoDB
-  // In a production environment, you would connect to MongoDB here
+  try {
+    // Get MongoDB URI from environment variables or use default local URI
+    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/wocslearnspace';
+    
+    // Connect to MongoDB
+    await mongoose.connect(mongoURI);
+    console.log('MongoDB connected successfully');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1); // Exit process with failure
+  }
 };
 
 module.exports = connectToDB;
