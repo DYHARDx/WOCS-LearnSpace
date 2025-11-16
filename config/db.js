@@ -2,12 +2,15 @@ const mongoose = require('mongoose');
 
 const connectToDB = async () => {
   try {
-    console.log('Connecting to:', process.env.MONGO_URI); // 🧪 add this to debug
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log('MongoDB connected');
-  } catch (err) {
-    console.error('MongoDB connection error:', err.message);
-    process.exit(1);
+    // Get MongoDB URI from environment variables or use default local URI
+    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/wocslearnspace';
+    
+    // Connect to MongoDB
+    await mongoose.connect(mongoURI);
+    console.log('MongoDB connected successfully');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1); // Exit process with failure
   }
 };
 
