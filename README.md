@@ -5,7 +5,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/HimanshiSh03/LearnSpace?style=social)
 ![GitHub license](https://img.shields.io/github/license/HimanshiSh03/LearnSpace)
 
-A Modern Task & Learning Management System
+A Modern Task & Learning Management System 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [Project Structure](#-project-structure) • [Usage](#-usage) • [Contributing](#-contributing) • [License](#-license)
 
 ---
