@@ -1,11 +1,11 @@
-const API_URL = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000';
-
 import React, { useState, useEffect } from "react";
 import {
   DragDropContext,
   Droppable,
   Draggable,
 } from "@hello-pangea/dnd";
+
+const API_URL = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000';
 
 const columns = {
   todo: { name: "To Do", bg: "bg-red-200", id: "todo" },
@@ -28,24 +28,22 @@ const Kanban = () => {
   const [taskLevel, setTaskLevel] = useState(1);
 
   // FETCH ALL TASKS ON COMPONENT MOUNT
-useEffect(() => {
-  const API_URL = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000';
-
-  const fetchTasks = async () => {
-    try {
-      const res = await fetch(`${API_URL}/api/tasks`);
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(`HTTP error! Status: ${res.status}, Message: ${errorData.message || 'Unknown error'}`);
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/tasks`);
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(`HTTP error! Status: ${res.status}, Message: ${errorData.message || 'Unknown error'}`);
+        }
+        const data = await res.json();
+        setTasks(data);
+      } catch (error) {
+        console.error("Error fetching tasks:", error);
       }
-      const data = await res.json();
-      setTasks(data);
-    } catch (error) {
-      console.error("Error fetching tasks:", error);
-    }
-  };
+    };
 
-  fetchTasks();
+    fetchTasks();
 }, []);
 
 
@@ -59,8 +57,13 @@ useEffect(() => {
       const res = await fetch(`${API_URL}/api/tasks`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // Ensure you send description, assignedUser, priority if you add input fields for them
-        body: JSON.stringify({ title, status, description: "", assignedUser: "Unassigned", priority: "Medium" }),
+        body: JSON.stringify({ 
+          title, 
+          status,
+          description: "",
+          assignedUser: "Unassigned",
+          priority: "Medium"
+        }),
       });
 
       if (!res.ok) {
