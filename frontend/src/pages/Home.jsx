@@ -106,10 +106,10 @@ export default function Home() {
                         Meet the amazing people helping improve LearnSpace.
                     </p>
                     <Link 
-                        to="/contributors"
-                        className="mt-4 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition duration-200"
+                        to="/contributors" 
+                        className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition duration-200"
                     >
-                        View Leaderboard
+                        View Contributors
                     </Link>
                 </motion.div>
 
@@ -123,14 +123,12 @@ export default function Home() {
                     <p className="text-gray-600 text-center mt-2">
                         Check out our open-source project and contribute.
                     </p>
-                    <a 
-                        href="https://github.com/HimanshiSh03/LearnSpace"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition duration-200"
+                    <Link 
+                        to="/owner" 
+                        className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-lg transition duration-200"
                     >
-                        Visit Repository
-                    </a>
+                        Learn More
+                    </Link>
                 </motion.div>
 
             </div>

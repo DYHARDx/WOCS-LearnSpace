@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Kanban from "./Kanban";
 import Home from "./pages/Home";
 import Books from "./pages/Books";
-import Whiteboard from "./components/Whiteboard";
-import Contributors from "./pages/Contributors";
 import BookPreview from "./pages/BookPreview";
-import Owner from "./pages/Owner"; // Added Owner import
+import Contributors from "./pages/Contributors";
+import About from "./pages/About";
+import Whiteboard from "./components/Whiteboard"; // Added Whiteboard import
 
 
 
@@ -26,6 +26,26 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />   
           
+          {/* Contributors route */}
+          <Route
+            path="/contributors"
+            element={
+              <ProtectedRoute>
+                <Contributors />
+              </ProtectedRoute>
+            }
+          />
+          
+          {/* About/Owner route */}
+          <Route
+            path="/owner"
+            element={
+              <ProtectedRoute>
+                <About />
+              </ProtectedRoute>
+            }
+          />
+
           {/* Kanban route - no longer protected */}
           <Route
             path="/kanban"
