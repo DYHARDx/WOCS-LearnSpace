@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Book, Kanban, PenTool, Users, User } from "lucide-react";
+import { Book, Kanban, PenTool, Users, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../components/LearnSpace logo.png";
 
@@ -21,7 +21,6 @@ export default function Home() {
                     <Link to="/books">BookSpace</Link>
                     <Link to="/whiteboard">Whiteboard</Link>
                     <Link to="/contributors">Contributors</Link>
-                    <Link to="/owner">About</Link>
                 </div>
             </nav>
 
@@ -43,12 +42,12 @@ export default function Home() {
                     whileHover={{ scale: 1.05 }}
                     className="mt-8 inline-block"
                 >
-                    {/* <Link
+                    <Link
                         to="/kanban"
                         className="px-8 py-3 bg-indigo-600 text-white rounded-xl shadow-md text-lg font-semibold"
                     >
                         Enter Workspace
-                    </Link> */}
+                    </Link>
                 </motion.div>
             </motion.div>
 
@@ -114,15 +113,15 @@ export default function Home() {
                     </Link>
                 </motion.div>
 
-                {/* Owner */}
+                {/* GitHub Repository */}
                 <motion.div
                     whileHover={{ scale: 1.04 }}
                     className="p-6 bg-white rounded-2xl shadow-lg flex flex-col items-center"
                 >
-                    <User className="w-12 h-12 text-indigo-600" />
-                    <h3 className="text-xl font-bold mt-4">About Owner</h3>
+                    <Github className="w-12 h-12 text-indigo-600" />
+                    <h3 className="text-xl font-bold mt-4">GitHub Repository</h3>
                     <p className="text-gray-600 text-center mt-2">
-                        Learn more about the developer behind this project.
+                        Check out our open-source project and contribute.
                     </p>
                     <Link 
                         to="/owner" 
