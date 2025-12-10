@@ -75,6 +75,15 @@ function App() {
           }
         />
       </Routes>
+ <Route
+          path="/about"
+          element={
+            <ProtectedRoute>
+              <Whiteboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
     </div>
   );
 }
