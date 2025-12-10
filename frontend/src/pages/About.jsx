@@ -7,13 +7,13 @@ const About = () => {
       
     },
     {
-      name: "Himanshi",
-      role: "Developer",
+      name: "Himanshi Sharma",
+      role: "Developer & Owner",
       bio: "Skilled developer contributing to the LearnSpace platform, enhancing features and improving user experience.",
-      skills: ["React", "JavaScript", "CSS", "HTML"],
-      github: "#",
-      linkedin: "#",
-      email: "#"
+      skills: ["React", "JavaScript", "NodeJS", "MongoDB"],
+      github: "#HimanshiSh03",
+      linkedin: "#https://www.linkedin.com/in/himanshi-sharma1009/",
+      email: "#himanshi03dev@gmail.com"
     }
   ];
 
