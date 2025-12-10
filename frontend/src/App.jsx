@@ -24,7 +24,7 @@ function App() {
   localStorage.setItem("isLoggedIn", "true");
 
   return (
-    <Router>
+    <>
       <div className="min-h-screen bg-gray-100">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -103,7 +103,7 @@ function App() {
           <Route path="/owner" element={<ProtectedRoute></ProtectedRoute>} />
         </Routes>
       </div>
-    </Router>
+    </>
   );
 }
 
