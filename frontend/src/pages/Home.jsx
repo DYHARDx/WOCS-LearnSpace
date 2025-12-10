@@ -86,6 +86,7 @@ function Home() {
                     <Link to="/books">BookSpace</Link>
                     <Link to="/whiteboard">Whiteboard</Link>
                     <Link to="/contributors">Contributors</Link>
+                    <Link to="/owner">About</Link>
                 </div>
             </nav>
 

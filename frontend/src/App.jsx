@@ -22,6 +22,7 @@ function App() {
         
         {/* About/Owner route */}
         <Route path="/owner" element={<Owner />} />
+        <Route path="/about" element={<About />} />
         
         {/* Kanban route */}
         <Route path="/kanban" element={<Kanban />} />
