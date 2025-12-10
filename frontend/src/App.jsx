@@ -1,109 +1,81 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Kanban from "./Kanban";
 import Home from "./pages/Home";
 import Books from "./pages/Books";
 import BookPreview from "./pages/BookPreview";
 import Contributors from "./pages/Contributors";
 import About from "./pages/About";
+import Whiteboard from "./components/Whiteboard";
 
-import Whiteboard from "./components/Whiteboard"; // Added Whiteboard import
-
-//  Route Guard using localStorage
+// Route Guard (but currently always allows)
 const ProtectedRoute = ({ children }) => {
-  // Always allow access to the kanban board (no login required)
   return children;
 };
 
 function App() {
-  // Set login flag automatically when app loads
+  // Temporary: auto-login
   localStorage.setItem("isLoggedIn", "true");
 
   return (
-    <>
-      <div className="min-h-screen bg-gray-100">
-        <Routes>
-          <Route path="/" element={<Home />} />
+    <div className="min-h-screen bg-gray-100">
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-          {/* Contributors route */}
-          <Route
-            path="/contributors"
-            element={
-              <ProtectedRoute>
-                <Contributors />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          path="/contributors"
+          element={
+            <ProtectedRoute>
+              <Contributors />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* About/Owner route */}
-          <Route
-            path="/owner"
-            element={
-              <ProtectedRoute>
-                <About />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          path="/owner"
+          element={
+            <ProtectedRoute>
+              <About />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* Kanban route - no longer protected */}
-          <Route
-            path="/kanban"
-            element={
-              <ProtectedRoute>
-                <Kanban />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          path="/kanban"
+          element={
+            <ProtectedRoute>
+              <Kanban />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* Books route */}
-          <Route
-            path="/books"
-            element={
-              <ProtectedRoute>
-                <Books />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          path="/books"
+          element={
+            <ProtectedRoute>
+              <Books />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* Book Preview route */}
-          <Route
-            path="/book/:id"
-            element={
-              <ProtectedRoute>
-                <BookPreview />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          path="/book/:id"
+          element={
+            <ProtectedRoute>
+              <BookPreview />
+            </ProtectedRoute>
+          }
+        />
 
-          {/* Whiteboard route */}
-          <Route
-            path="/whiteboard"
-            element={
-              <ProtectedRoute>
-                <Whiteboard />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Contributors route */}
-          <Route
-            path="/contributors"
-            element={
-              <ProtectedRoute>
-                <Contributors />
-              </ProtectedRoute>
-            }
-          />
-
-          {/* Owner/About route */}
-          <Route path="/owner" element={<ProtectedRoute></ProtectedRoute>} />
-        </Routes>
-      </div>
-    </>
+        <Route
+          path="/whiteboard"
+          element={
+            <ProtectedRoute>
+              <Whiteboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
