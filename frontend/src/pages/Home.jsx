@@ -399,6 +399,12 @@ export default function Home() {
               >
                 Contributors
               </Link>
+              <Link
+                to="/about"
+                className="hover:text-indigo-300 transition-colors"
+              >
+                About
+              </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-700 text-gray-400">
