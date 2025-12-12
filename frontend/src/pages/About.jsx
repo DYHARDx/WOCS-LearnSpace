@@ -4,13 +4,16 @@ import { Github, Linkedin, Mail, User, Code, BookOpen, Users } from "lucide-reac
 const About = () => {
   const teamMembers = [
     {
-      name: "Dylan Harnoor",
-      role: "Lead Developer & Creator",
-      bio: "Passionate full-stack developer with a mission to create educational tools that empower learners worldwide.",
-      skills: ["React", "Node.js", "MongoDB", "UI/UX Design"],
-      github: "#",
-      linkedin: "#",
-      email: "#"
+      
+    },
+    {
+      name: "Himanshi Sharma",
+      role: "Developer & Owner",
+      bio: "Skilled developer contributing to the LearnSpace platform, enhancing features and improving user experience.",
+      skills: ["React", "JavaScript", "NodeJS", "MongoDB"],
+      github: "#HimanshiSh03",
+      linkedin: "#https://www.linkedin.com/in/himanshi-sharma1009/",
+      email: "#himanshi03dev@gmail.com"
     }
   ];
 
@@ -61,7 +64,7 @@ const About = () => {
         </div>
 
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Meet the Creator</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">Meet the Team</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {teamMembers.map((member, index) => (
