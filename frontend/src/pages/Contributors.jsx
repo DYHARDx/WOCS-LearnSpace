@@ -468,7 +468,7 @@ const Contributors = () => {
             <Award className="mr-2 text-yellow-500" />
             Contributor Roles
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="border border-yellow-200 rounded-lg p-4 bg-yellow-50 hover:shadow-md transition-shadow duration-300">
               <h3 className="font-bold text-yellow-700 flex items-center">
                 <Medal className="w-5 h-5 mr-2" />
@@ -500,32 +500,6 @@ const Contributors = () => {
               </h3>
               <p className="text-purple-600 text-sm mt-2">100+ points</p>
               <p className="text-gray-600 text-sm mt-1">Top community leader</p>
-            </div>
-            
-            {/* GitHub-specific roles */}
-            <div className="border border-green-200 rounded-lg p-4 bg-green-50 hover:shadow-md transition-shadow duration-300">
-              <h3 className="font-bold text-green-700 flex items-center">
-                <Code className="w-5 h-5 mr-2" />
-                Open Source Contributor
-              </h3>
-              <p className="text-green-600 text-sm mt-2">GitHub contributors</p>
-              <p className="text-gray-600 text-sm mt-1">Contributed to the codebase</p>
-            </div>
-            <div className="border border-blue-200 rounded-lg p-4 bg-blue-50 hover:shadow-md transition-shadow duration-300">
-              <h3 className="font-bold text-blue-700 flex items-center">
-                <Code className="w-5 h-5 mr-2" />
-                Active Contributor
-              </h3>
-              <p className="text-blue-600 text-sm mt-2">20+ GitHub points</p>
-              <p className="text-gray-600 text-sm mt-1">Regular GitHub contributor</p>
-            </div>
-            <div className="border border-purple-200 rounded-lg p-4 bg-purple-50 hover:shadow-md transition-shadow duration-300">
-              <h3 className="font-bold text-purple-700 flex items-center">
-                <Code className="w-5 h-5 mr-2" />
-                Core Maintainer
-              </h3>
-              <p className="text-purple-600 text-sm mt-2">50+ GitHub points</p>
-              <p className="text-gray-600 text-sm mt-1">Key project maintainer</p>
             </div>
           </div>
         </div>
