@@ -42,26 +42,46 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white">
       {/* Navbar */}
-      <nav className="flex flex-wrap justify-between items-center px-6 md:px-10 py-4 bg-white shadow-sm sticky top-0 z-50">
-        <div className="flex items-center gap-3">
-          <img src={Logo} alt="LearnSpace logo" className="w-10 h-10 object-contain" />
-          <h1 className="text-2xl font-bold text-indigo-600">LearnSpace</h1>
-        </div>
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-indigo-100">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <img
+              src={Logo}
+              alt="LearnSpace logo"
+              className="w-10 h-10 object-contain drop-shadow-sm"
+            />
+            <h1 className="text-2xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              LearnSpace
+            </h1>
+          </div>
 
-        <button
-          className="md:hidden text-indigo-600 focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center gap-8 text-[16px] font-medium">
+            {[
+              { name: "Home", path: "/" },
+              { name: "Kanban", path: "/kanban" },
+              { name: "BookSpace", path: "/books" },
+              { name: "Whiteboard", path: "/whiteboard" },
+              { name: "Contributors", path: "/contributors" },
+              { name: "About Us", path: "/about-us" },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="relative text-gray-600 hover:text-indigo-600 transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-indigo-600 hover:after:w-full after:transition-all"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
 
-        <div className={`w-full md:w-auto md:flex md:items-center gap-6 mt-4 md:mt-0 transition-all duration-300 ${menuOpen ? "block" : "hidden"}`}>
-          <Link to="/" className="block md:inline">Home</Link>
-          <Link to="/kanban" className="block md:inline">Kanban</Link>
-          <Link to="/books" className="block md:inline">BookSpace</Link>
-          <Link to="/whiteboard" className="block md:inline">Whiteboard</Link>
-          <Link to="/contributors" className="block md:inline">Contributors</Link>
-          <Link to="/about-us" className="block md:inline">About Us</Link>
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <button className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
+              Get Started
+            </button>
+          </div>
         </div>
       </nav>
 
