@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, BookOpen, Bookmark, Star, Filter } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Books = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const navigate = useNavigate();
 
   // Sample book data
   const books = [
