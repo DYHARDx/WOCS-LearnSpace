@@ -16,9 +16,9 @@ const About = () => {
       role: "Developer & Owner",
       bio: "Skilled developer contributing to the LearnSpace platform, enhancing features and improving user experience.",
       skills: ["React", "JavaScript", "NodeJS", "MongoDB"],
-      github: "#HimanshiSh03",
-      linkedin: "#https://www.linkedin.com/in/himanshi-sharma1009/",
-      email: "#himanshi03dev@gmail.com",
+      github: "https://github.com/HimanshiSh03",
+      linkedin: "https://www.linkedin.com/in/himanshi-sharma1009/",
+      email: "mailto:himanshi03dev@gmail.com",
     },
   ];
 
@@ -78,8 +78,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8">
             Meet the Team
           </h2>
 
@@ -87,29 +87,61 @@ const About = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+                className="
+          group relative
+          border border-gray-200 rounded-2xl p-6
+          bg-gradient-to-b from-white to-gray-50
+          transition-all duration-300
+          hover:-translate-y-2 hover:shadow-2xl
+          hover:border-indigo-200
+        "
               >
-                <div className="flex items-center mb-4">
-                  <div className="bg-indigo-100 rounded-full p-2 w-12 h-12 flex items-center justify-center mr-4">
-                    <User className="text-indigo-600 w-6 h-6" />
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className="
+            relative flex items-center justify-center
+            w-14 h-14 rounded-full
+            bg-indigo-100
+            ring-4 ring-indigo-100/50
+            group-hover:ring-indigo-200
+            transition
+          "
+                  >
+                    <User className="text-indigo-600 w-7 h-7" />
                   </div>
+
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800">
+                    <h3 className="text-xl font-semibold text-gray-800">
                       {member.name}
                     </h3>
-                    <p className="text-indigo-600">{member.role}</p>
+                    <p className="text-indigo-600 text-sm font-medium">
+                      {member.role}
+                    </p>
                   </div>
                 </div>
 
-                <p className="text-gray-600 mb-4">{member.bio}</p>
+                {/* Bio */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  {member.bio}
+                </p>
 
-                <div className="mb-4">
-                  <h4 className="font-bold text-gray-700 mb-2">Skills:</h4>
+                {/* Skills */}
+                <div className="mb-5">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">
+                    Skills
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {member.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                        className="
+                  px-3 py-1 text-xs font-medium
+                  rounded-full
+                  bg-indigo-50 text-indigo-700
+                  hover:bg-indigo-100
+                  transition
+                "
                       >
                         {skill}
                       </span>
@@ -117,22 +149,29 @@ const About = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                {/* Social Links */}
+                <div className="flex items-center gap-4 pt-3 border-t border-gray-100">
                   <a
                     href={member.github}
-                    className="text-gray-500 hover:text-indigo-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-indigo-600 transition"
                   >
                     <Github className="w-5 h-5" />
                   </a>
+
                   <a
                     href={member.linkedin}
-                    className="text-gray-500 hover:text-indigo-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-indigo-600 transition"
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
+
                   <a
                     href={member.email}
-                    className="text-gray-500 hover:text-indigo-600"
+                    className="text-gray-500 hover:text-indigo-600 transition"
                   >
                     <Mail className="w-5 h-5" />
                   </a>
