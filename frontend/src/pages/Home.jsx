@@ -10,7 +10,9 @@ import {
   TrendingUp,
   Lightbulb,
   Globe,
-  Award
+  Award,
+  Menu,
+  X,
 } from "lucide-react";
 
 import Logo from "../components/LearnSpace logo.png";
@@ -77,8 +79,8 @@ const FEATURES = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white">
-
-      {/* ----------------------------- NAVBAR ----------------------------- */}
+      {/* Navbar */}
+      {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-indigo-100">
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
 
@@ -93,6 +95,7 @@ export default function Home() {
             </h1>
           </div>
 
+          {/* Navigation Links (Desktop) */}
           <div className="hidden md:flex items-center gap-8 text-[16px] font-medium">
             {NAV_ITEMS.map((item) => (
               <Link
@@ -105,13 +108,58 @@ export default function Home() {
             ))}
           </div>
 
+          {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
             <button className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
               Get Started
             </button>
           </div>
 
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-gray-600 hover:text-indigo-600 focus:outline-none"
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-indigo-100 shadow-lg"
+          >
+            <div className="flex flex-col px-6 py-4 space-y-4">
+              {[
+                { name: "Home", path: "/" },
+                { name: "Kanban", path: "/kanban" },
+                { name: "BookSpace", path: "/books" },
+                { name: "Whiteboard", path: "/whiteboard" },
+                { name: "Contributors", path: "/contributors" },
+                { name: "About Us", path: "/about-us" },
+              ].map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-gray-600 hover:text-indigo-600 font-medium text-lg transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="pt-4">
+                <button className="w-full px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </nav>
 
       {/* ----------------------------- HERO ----------------------------- */}
