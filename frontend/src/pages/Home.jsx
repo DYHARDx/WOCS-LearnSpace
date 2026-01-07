@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import {
   Book,
@@ -77,6 +78,7 @@ const FEATURES = [
 /* ----------------------------- COMPONENT ----------------------------- */
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white">
       {/* Navbar */}
