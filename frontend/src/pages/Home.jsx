@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
   Book,
   Kanban,
@@ -77,6 +77,8 @@ const FEATURES = [
 /* ----------------------------- COMPONENT ----------------------------- */
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white">
       {/* Navbar */}
@@ -110,7 +112,7 @@ export default function Home() {
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
+            <button onClick={() => navigate('/kanban')} className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
               Get Started
             </button>
           </div>
@@ -153,7 +155,14 @@ export default function Home() {
                 </Link>
               ))}
               <div className="pt-4">
-                <button className="w-full px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
+                <button
+                  type="button"  
+                  onClick={() => {
+                    navigate('/kanban');
+                    setMenuOpen(false);
+                  }}
+                  className="w-full px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all"
+                >
                   Get Started
                 </button>
               </div>
