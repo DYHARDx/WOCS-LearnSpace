@@ -113,7 +113,7 @@ export default function Home() {
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
-            <button className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
+            <button onClick={() => navigate('/kanban')} className="px-5 py-2 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
               Get Started
             </button>
           </div>
@@ -156,7 +156,14 @@ export default function Home() {
                 </Link>
               ))}
               <div className="pt-4">
-                <button className="w-full px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all">
+                <button
+                  type="button"  
+                  onClick={() => {
+                    navigate('/kanban');
+                    setMenuOpen(false);
+                  }}
+                  className="w-full px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all"
+                >
                   Get Started
                 </button>
               </div>
